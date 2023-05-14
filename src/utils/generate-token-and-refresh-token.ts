@@ -6,7 +6,7 @@ export async function generateTokenAndRefreshToken(
 ) {
   const token = await reply.jwtSign(
     {},
-    { sign: { sub: userId, expiresIn: "5s" } }
+    { sign: { sub: userId, expiresIn: "5m" } }
   );
 
   const refreshToken = await reply.jwtSign(
